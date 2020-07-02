@@ -4,11 +4,6 @@
 
 ##################################################
 "
-Goal here is to address some of the issues I see in
-the current data munging process in Greg's approach
-and to see if it is possible to largely automate
-this process from start to finish in R itself.
-
 Quick overview of the new data munging process:
   1 - Average all the spots together
   2 - Shift data by assing all numbers with the
