@@ -268,32 +268,3 @@ for (df in spriDfList) {
 # TODO: in the Kinetic comments, on the injection lines it lists what's being injected as well as the
 #       concentration. Could extract this and put into a named list. if this was able to correspond, or could list
 #       the time in the name for each entry, could use this to iterate the dfs and generate results
-#for (df in spriProcessed) {
-  # Still need to figure out how to make this work
-#}
-
-
-####################
-library(ggplot2)
-library(writexl)
-write_xlsx(spriProcessed, "./Pick_Me/Everything_processed.xlsx")
-
-x <- spriProcessed$`Time- 14`$Time
-y1 <- spriProcessed$`Time- 14`$C
-dfGraph <- data.frame(x, y1)
-
-# Graph after my data correction
-ggplot(dfGraph, aes(x)) +
-  geom_point(aes(y=y1)) +
-  geom_smooth(aes(y=y1), colour = 'red')
-
-###
-Norm <- as.vector(spriDfList[[1]]$C)
-x2 <- x
-y2 <- Norm
-dfGraph <- data.frame(x2, y2)
-
-# Raw graph
-ggplot(dfGraph, aes(x2)) +
-  geom_point(aes(y=y2)) +
-  geom_smooth(aes(y=y2), colour = 'green')
